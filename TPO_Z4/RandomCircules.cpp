@@ -6,8 +6,9 @@
 #include <vector>
 #include<algorithm>
 #include<fstream>
+#include <iomanip>
 
-# define M_PI           3.14159265358979323846  /* pi */
+# define M_PI           3.14159265358979323846
 using namespace std;
 
 struct Circle{
@@ -72,8 +73,9 @@ int main(){
 	stable_sort(circlesVec.begin(), circlesVec.end(), sortByX);
 	fstream f;
 	f.open("File.txt", ios::out);
+	cout.precision(5);
 	for (i=0;i<number;i++)
-        f<< i << "\t|" << circlesVec[i].x<<"\t|"<< circlesVec[i].y<<endl;
+        f<< i << "\t|" << fixed << circlesVec[i].x<<"\t|"<< circlesVec[i].y<<endl;
 
     f.close();
     return 0;
